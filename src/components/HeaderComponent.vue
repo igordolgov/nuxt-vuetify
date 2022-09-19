@@ -1,23 +1,23 @@
 <template lang="pug">
 .header-component
-  v-app-bar(app fixed dense dark color="primary")
+  v-app-bar(app fixed dense dark style="background: #069")
     v-container.d-flex
-      router-link(to="/")
-        v-img.mr-2.mt-3.mt-sm-1(src="img/logo-sks-white.png"
-          max-width="53px" max-height="42px" position="center")
+      router-link(to="/").my-auto
+        v-img.mr-2(src="img/logo-sks-white.png"
+          max-width="53px" position="center")
           v-spacer
       v-toolbar-title.my-auto SKSAVIA.RU
       v-spacer
       v-app-bar-nav-icon.d-sm-none(@click="drawer = true" width="24px")
-      v-btn.primary.lighten-1.hidden-xs-only.py-0.ml-2.elevation-2.rounded-xl(
+      v-btn.light-blue.accent-4.hidden-xs-only.py-0.ml-2.elevation-2.rounded-xl(
         :href="item.adress" v-for="item in menuItems" :key="item.index")
         | {{ item.title }}
-  v-navigation-drawer(v-model="drawer" absolute temporary fill-height dark)
+  v-navigation-drawer.grey.lighten-2(v-model="drawer" fixed temporary width="auto")
     v-list(nav dense)
-      v-list-item-group(v-model="group"
+      v-list-item-group.list-position(v-model="group"
           active-class="primary--text text--accent-4")
         v-list-item(:href="item.adress" v-for="item in menuItems" :key="item.index")
-          v-btn.secondary.lighten-3.white--text.my-1.rounded-lg(elevation="6" x-large)
+          v-btn.white--text.my-1.rounded-lg(elevation="6" x-large style="background: #069")
             v-list-item-title {{ item.title }}
 </template>
 

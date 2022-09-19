@@ -1,15 +1,15 @@
 <template lang="pug">
 //- Страница товара
 v-container
-  v-row.pb-0.d-flex(justify="left")
-    v-col.pa-0.mr-3.mb-3(cols="12" sm="7" lg="8" xl="9")
-      v-sheet.img-height.pa-0.mx-auto.d-flex.align-center.grey.lighten-2.elevation-1
-        v-carousel.pa-0(v-model="model" light hide-delimiters height="100%")
+  v-row.pb-0
+    v-col.pa-0.mr-3.mb-3(cols="12" sm="7" lg="8")
+      v-sheet.img-height.pa-0.d-flex.align-center.grey.lighten-2.elevation-1
+        v-carousel.pa-0(v-model="model" light hide-delimiters height="100%" :aspect-ratio="1")
           v-carousel-item(:src="image.src"
             v-for="(image, i) in product.images" :key="i"
-              contain :aspect-ratio="1")
-    v-col.item__info(cols="12" sm="4" lg="3")
-      span.d-none.d-sm-flex.secondary--text.text--lighten-4 Артикул: {{ product.category + "-" + product.id }}
+              contain :aspect-ratio="1" height="auto")
+    v-col(cols="12" sm="4" lg="3").text-body-2
+      span.secondary--text.text--lighten-4 Артикул: {{ product.category + "-" + product.id }}
       hr.d-none.d-sm-flex.mb-2.secondary--text
       h3 {{ product.title }}
       span.d-sm-flex.mr-3.pa-0.ma-0(v-if="product.quantity > 0").
@@ -76,11 +76,5 @@ export default {
 <style>
   .v-icon__svg {
     fill: lightgrey;
-  }
-
-  @media (min-width: 394px) {
-    .img-height {
-      height: 87vh;
-    }
   }
 </style>
