@@ -4,7 +4,6 @@ import MainPage from '@/pages/MainPage.vue';
 import MotorsPage from '@/pages/motors/MotorsPage.vue';
 import PropellersPage from '@/pages/propellers/PropellersPage.vue';
 import StartersPage from '@/pages/starters/StartersPage.vue';
-import CartPage from '@/pages/CartPage.vue';
 import NotFoundPage from '@/pages/NotFoundPage.vue';
 import ProductPage from '@/pages/ProductPage.vue';
 
@@ -17,7 +16,6 @@ const routes = [ // Добавляем маршруты
   { name: 'propellers', component: PropellersPage, path: '/propellers' },
   { name: 'starters', component: StartersPage, path: '/starters' },
   { name: 'product', component: ProductPage, path: '/product/:id' },
-  { name: 'cart', component: CartPage, path: '/cart' },
   { name: 'notFound', component: NotFoundPage, path: '*' },
 ];
 

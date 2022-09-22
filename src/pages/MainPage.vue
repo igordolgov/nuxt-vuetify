@@ -21,3 +21,5 @@ v-row
   //- BaseBagination(v-model="page" :count="countProducts" :per-page="productsPerPage")
 </template>
 
+<style>
+</style>

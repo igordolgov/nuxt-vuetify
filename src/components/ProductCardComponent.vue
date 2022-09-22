@@ -1,7 +1,7 @@
 ﻿<template lang="pug">
 v-col.pa-1(cols="12" sm="6" md="4" xl="3")
   router-link(:to="{ name: 'product', params: { id: product.id } }").decor
-    v-card.pa-2(elevation="8", height="auto")
+    v-card.pa-2(elevation="4", height="100%")
       v-row
         v-col(cols="6" sm="6" lg="8").pr-2
           v-img.mb-1.grey.lighten-3(
@@ -11,10 +11,9 @@ v-col.pa-1(cols="12" sm="6" md="4" xl="3")
             aspect-ratio="1",
             height="auto"
           )
-        v-col.pl-0.text-body-2.text-lg-caption.lh(cols="6" sm="6" lg="4")
+        v-col.pl-0.text-body-2.lh(cols="6" sm="6" lg="4")
           p.title-height.mb-0.font-weight-bold
             | {{ product.title }}
-          //- hr.mb-2
           p.pa-0.ma-0(v-if="product.quantity > 0")
             | Кол-во: {{ product.quantity }} шт.
           p.red--text.pb-0.mb-0(
@@ -30,7 +29,6 @@ v-col.pa-1(cols="12" sm="6" md="4" xl="3")
 </template>
 
 <script>
-import gotoPage from "@/helpers/gotoPage";
 import numberFormat from "@/helpers/numberFormat";
 
 export default {
@@ -42,9 +40,6 @@ export default {
   filters: {
     // ФИЛЬТРЫ (Объект методов). Ключ - название фильтра, значение - функция, которая совершает полезную работу
     numberFormat,
-  },
-  methods: {
-    gotoPage,
   },
   // eslint-disable-next-line vue/require-prop-types
   props: ["product"],
