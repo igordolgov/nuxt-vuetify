@@ -7,7 +7,7 @@ v-row
       v-divider.hidden-xs-only
       span.text-subtitle-2.font-italic.
         Надеемся, что Вы найдёте то, что искали
-      v-img(src="https://avavatar.ru/images/full/17/IpiNMnqesRApQ4Ud.jpg").mt-1
+      v-img.mt-1(src="https://avavatar.ru/images/full/17/IpiNMnqesRApQ4Ud.jpg")
     //-
       Подключаем ProductFilter и передаём ему значения через пропсы (с помощью v-bind).
       * Про использование модификатора ".sync" см. в файле ProductFilter.vue
@@ -21,5 +21,25 @@ v-row
   //- BaseBagination(v-model="page" :count="countProducts" :per-page="productsPerPage")
 </template>
 
+<script defer>
+export default {
+  loaded() {
+    window.scrollTo(0, 0);
+  },
+
+  data() {
+    return {
+      layout: "Default",
+    };
+  },
+};
+</script>
+
 <style>
+@media screen and (max-width: 414px) {
+  .col-margin {
+    margin-top: 96px;
+    /* padding-top: 96px; */
+  }
+}
 </style>

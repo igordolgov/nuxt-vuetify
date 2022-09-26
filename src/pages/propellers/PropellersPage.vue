@@ -2,7 +2,7 @@
 ProductListComponent(:products="products")
 </template>
 
-<script>
+<script defer>
 import products from "@/data/products";
 import ProductListComponent from "@/components/ProductListComponent.vue";
 

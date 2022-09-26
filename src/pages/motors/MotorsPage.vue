@@ -5,23 +5,22 @@
 ProductListComponent(:products="products")
 </template>
 
-<script>
+<script defer>
 import products from "@/data/products"; // импортируем товары в переменную products
 import ProductListComponent from "@/components/ProductListComponent.vue";
 
 export default {
   components: {
-    ProductListComponent
+    ProductListComponent,
   },
 
   data() {
     return {
       filterCategory: "Моторы", // Категория отображаемая на странице
-    }
+    };
   },
 
   computed: {
-    // ВЫЧИСЛЯЕМЫЕ СВОЙСТВА:
     // Вычисляемые свойства - это свойства, значения которых получаются динамически, с помощью
     // функций, а результаты кэшируются до тех пор, пока зависимые свойства не будут изменены
     // (чтобы не пересчитывать значения каждый раз заново, если они не изменяются)
@@ -34,15 +33,24 @@ export default {
         // Если в поле "Категории" выбрана категория,
         filteredProducts = filteredProducts.filter(
           (product) => product.category === this.filterCategory
-        ) // Показать только те товары, у которых категория соответствует выбранной категории
-      } return filteredProducts; // вычисляемые свойства возвращают переменную.
+        ); // Показать только те товары, у которых категория соответствует выбранной категории
+      }
+      return filteredProducts; // вычисляемые свойства возвращают переменную.
       // т.е. результат выполнения функции сохраняем в переменную filteredProducts
     },
 
     products() {
       // Список товаров на странице
       return this.filteredProducts;
-    }
+    },
+  },
+};
+</script>
+
+<style>
+@media screen and (max-width: 414px) {
+  .col-margin {
+    margin-top: 96px;
   }
 }
-</script>
+</style>

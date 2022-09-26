@@ -1,5 +1,5 @@
 <template lang="pug">
-//- Страница товара
+//- СТРАНИЦА ТОВАРА
 v-container
   v-row.pb-0
     v-col.pa-0.mr-3.mb-3(cols="12", sm="7", lg="8")
@@ -15,17 +15,16 @@ v-container
         )
           v-carousel-item(
             :src="image.src",
-            :show-arrows="arrows",
             v-for="(image, i) in product.images",
             :key="i",
             contain,
             :aspect-ratio="1",
             height="auto"
           )
-    v-col.text-caption.text-sm-body-1.pt-0(cols="12", sm="4", lg="3")
+    v-col.font.text-sm-body-2.pt-0(cols="12", sm="4", lg="3")
       span.secondary--text.text--lighten-4 Артикул:
       | {{ product.category + '-' + product.id }}
-      hr.secondary--text
+      hr.secondary--text.mb-2
       h3 {{ product.title }}
       span.d-sm-flex.mr-2.pa-0.ma-0(v-if="product.quantity > 0").
         Кол-во: {{ product.quantity }} шт.
@@ -41,16 +40,16 @@ v-container
         {{ product.description }}
 </template>
 
-<script>
+<script defer>
 import products from "@/data/products";
 import categories from "@/data/categories";
 import numberFormat from "@/helpers/numberFormat";
 
 export default {
   data() {
-    // СОСТОЯНИЕ
     return {
       model: 0,
+      layout: "ProductPageLayout",
     };
   },
 
@@ -69,8 +68,7 @@ export default {
     category() {
       return categories.find(
         (category) => category.id === this.product.categoryId
-      );
-      // аналогично для категории (для отображения категории на карточке товара)
+      ); // аналогично для категории (для отображения категории на карточке товара)
     },
   },
 };
@@ -85,7 +83,13 @@ export default {
 }
 @media (min-width: 414px) {
   .v-carousel {
-    height: 90vh !important;
+    height: 80vh !important;
+  }
+}
+@media (max-width: 414px) {
+  .font {
+    font-size: 15px !important;
+    line-height: 1.25;
   }
 }
 </style>
