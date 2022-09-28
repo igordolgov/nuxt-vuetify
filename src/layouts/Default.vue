@@ -4,10 +4,10 @@ v-app
   v-main.grey.lighten-4
     HeaderComponent
     v-container
-      v-row.col-margin
+      v-row
         v-col.pa-0(cols="12")
           SidebarComponent
-        v-col.sm-py-0(cols="12", offset-sm="4", offset-lg="2", lg="10")
+        v-col.sm-py-0.sm-pl-0(cols="12", offset-xs="3" offset-sm="3" offset-lg="2" offset-xl="2" sm="10")
           router-view.grey.lighten-4
 </template>
 

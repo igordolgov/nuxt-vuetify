@@ -21,7 +21,7 @@ v-row
   //- BaseBagination(v-model="page" :count="countProducts" :per-page="productsPerPage")
 </template>
 
-<script defer>
+<script>
 export default {
   loaded() {
     window.scrollTo(0, 0);
@@ -36,10 +36,9 @@ export default {
 </script>
 
 <style>
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 415px) {
   .col-margin {
     margin-top: 96px;
-    /* padding-top: 96px; */
   }
 }
 </style>

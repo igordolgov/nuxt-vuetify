@@ -48,7 +48,7 @@ export default {
 </script>
 
 <style>
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 415px) {
   .col-margin {
     margin-top: 96px;
   }

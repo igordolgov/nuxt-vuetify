@@ -40,31 +40,47 @@ export default {
 }
 @media (max-width: 414px) {
   .sidebar {
-    position: fixed;
     top: 43px;
     width: 100%;
     height: 100px;
-    z-index: 1;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    padding-left: 0;
-    padding-right: 0;
   }
   .sidebar-height {
     height: 99vh;
   }
 }
-@media (min-width: 414px) {
+@media (min-width: 415px) and (max-width: 959px) {
   .sidebar {
     position: fixed;
     top: 43px;
-    width: 198px;
+    width: 23%;
     height: 100%;
     z-index: 1;
     overflow-x: hidden;
     overflow-y: auto;
     padding-left: 0;
     padding-right: 0;
+  }
+  .sidebar-height {
+    height: 100%;
+  }
+}
+@media (min-width: 960px) and (max-width: 1903px) {
+  .sidebar {
+    position: fixed;
+    width: 190px;
+    height: 100%;
+    left: 85px;
+  }
+  .sidebar-height {
+    height: 100%;
+  }
+}
+@media (min-width: 1904px) {
+  .sidebar {
+    position: fixed;
+    left: 100px;
+    width: 248px;
+    height: 100%;
   }
   .sidebar-height {
     height: 100%;
