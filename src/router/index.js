@@ -6,6 +6,7 @@ import PropellersPage from "@/pages/propellers/PropellersPage.vue";
 import StartersPage from "@/pages/starters/StartersPage.vue";
 import NotFoundPage from "@/pages/NotFoundPage.vue";
 import ProductPage from "@/pages/ProductPage.vue";
+// import MainPageLayout from "@/layouts/MainPageLayout.vue";
 
 Vue.use(VueRouter); // Сообщаем Vue, что будем использовать VueRouter
 
@@ -15,6 +16,9 @@ const routes = [
 		name: "main",
 		component: MainPage,
 		path: "/",
+		meta: {
+			layout: "MainPageLayout",
+		},
 	},
 	{ name: "motors", component: MotorsPage, path: "/motors" },
 	{
@@ -38,6 +42,7 @@ const routes = [
 
 const router = new VueRouter({
 	routes, // Подключаем массив маршрутов
+	mode: "hash",
 }); // Создаём новый экземпляр VueRouter
 
 export default router; // Экспортируем VueRouter

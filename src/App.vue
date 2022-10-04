@@ -1,11 +1,11 @@
-<template lang="pug">
+﻿<template lang="pug">
 v-app
   v-main.grey.lighten-4.pt-0
     component(:is="layout")
       router-view
 </template>
 
-<script defer>
+<script>
 export default {
   computed: {
     layout() {

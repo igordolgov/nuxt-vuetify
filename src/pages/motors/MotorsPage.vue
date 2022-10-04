@@ -2,7 +2,8 @@
 //-
   Подключаем компонент ProductListComponent и передаем ему параметр products,
   который равен массиву products, хранящемуся в состоянии data (в computed)
-ProductListComponent(:products="products")
+.motors-page
+  ProductListComponent(:products="products").pt-12.pt-sm-4
 </template>
 
 <script defer>
@@ -17,6 +18,8 @@ export default {
   data() {
     return {
       filterCategory: "Моторы", // Категория отображаемая на странице
+      filterColorsId: "",
+      layout: "Default", // Разметка используемая на странице
     };
   },
 
@@ -49,8 +52,8 @@ export default {
 
 <style>
 @media screen and (max-width: 415px) {
-  .col-margin {
-    margin-top: 96px;
+  .motors-page {
+    margin-top: -109px;
   }
 }
 </style>

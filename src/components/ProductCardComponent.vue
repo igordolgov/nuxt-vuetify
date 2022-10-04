@@ -1,7 +1,7 @@
 ﻿<template lang="pug">
 v-col.pa-1(cols="12" sm="6" md="4" xl="3")
   router-link.decor(:to="{ name: 'product', params: { id: product.id } }")
-    v-card.pa-2(elevation="4", height="100%")
+    v-card.pa-2.rounded-lg(elevation="4", height="100%")
       v-row
         v-col.pr-2(cols="6", lg="7")
           v-img.mb-1.grey.lighten-3(

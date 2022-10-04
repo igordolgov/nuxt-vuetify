@@ -1,8 +1,9 @@
 <template lang="pug">
-ProductListComponent(:products="products")
+.propellers-page
+  ProductListComponent(:products="products")
 </template>
 
-<script defer>
+<script>
 import products from "@/data/products";
 import ProductListComponent from "@/components/ProductListComponent.vue";
 
@@ -34,3 +35,14 @@ export default {
   }
 }
 </script>
+
+<style>
+.propellers-page {
+  margin-top: 16px;
+}
+@media screen and (max-width: 415px) {
+  .propellers-page {
+    margin-top: -61px;
+  }
+}
+</style>

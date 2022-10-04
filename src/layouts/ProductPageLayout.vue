@@ -5,13 +5,13 @@ v-app
     HeaderComponent
     v-container
       v-row.pt-3.pt-sm-0
-        v-col.pl-0.pt-0.hidden-xs-only.white
-          SidebarComponent
+        //- v-col.pl-0.pt-0.hidden-xs-only.white
+        //-   SidebarComponent
         v-col.sm-py-0.white(
           cols="12",
-          offset-xs="3",
-          offset-sm="3",
-          offset-md="2",
+          offset-xs="0",
+          offset-sm="0",
+          offset-md="0",
           sm="10",
           lg="10"
         )
@@ -20,10 +20,11 @@ v-app
 
 <script>
 import HeaderComponent from "@/components/HeaderComponent.vue";
-import SidebarComponent from "../components/SidebarComponent.vue";
+import SidebarComponent from "@/components/SidebarComponent.vue";
 export default {
   name: "ProductPageLayout",
   components: { HeaderComponent, SidebarComponent },
-  data: () => ({}),
+  data: () => ({
+  }),
 };
 </script>

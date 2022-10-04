@@ -1,5 +1,6 @@
 <template lang="pug">
-ProductListComponent(:products="products")
+.starters-page
+  ProductListComponent(:products="products").pt-0.pt-sm-0
 </template>
 
 <script defer>
@@ -34,3 +35,14 @@ export default {
   }
 }
 </script>
+
+<style>
+  .starters-page {
+    margin-top: 16px;
+  }
+  @media screen and (max-width: 415px) {
+    .starters-page {
+      margin-top: -61px;
+    }
+  }
+  </style>

@@ -5,11 +5,13 @@ import router from "./router"; // Добавляем router к корневом�
 import store from "./store"; // Импортируем хранилище
 import Default from "./layouts/Default"; // Разметка по умолчанию
 import ProductPageLayout from "./layouts/ProductPageLayout"; // Разметка для страницы товара
+import MainPageLayout from "./layouts/MainPageLayout"; // Разметка для страницы товара
 
 Vue.config.productionTip = false; // Отключаем предупреждение о сборках для разработки
 
 Vue.component("Default", Default);
 Vue.component("ProductPageLayout", ProductPageLayout);
+Vue.component("MainPageLayout", MainPageLayout);
 
 // Инициализируем Vue instance и крепим его к div c id "App" (в public/index.html)
 new Vue({

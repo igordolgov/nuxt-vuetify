@@ -1,6 +1,6 @@
 <template lang="pug">
 .header-component
-  v-app-bar(app, fixed, dense, dark, style="background: #069")
+  v-app-bar(app, fixed, dense, dark, style="background: #069; z-index: 999")
     v-container.d-flex
       router-link.my-auto(to="/")
         v-img.mr-2(
@@ -19,6 +19,7 @@
       )
         | {{ item.title }}
   v-navigation-drawer.grey.lighten-2.pr-4(
+    style="background: #069; z-index: 9999"
     v-model="drawer",
     fixed,
     temporary,
@@ -42,10 +43,14 @@
             v-list-item-title {{ item.title }}
         h3.grey--text.ml-3.pt-2.
           КАТАЛОГ:
-        v-btn.product-btn.font-weight-bold.text-caption.elevation-3.my-3.ml-2.rounded-lg(block @click="scrollToTop()"
-          :to="tab.route"
-          v-for="tab in tabs" :key="tab.route",
-          active-class="primary darken-1")
+        v-btn.product-btn.font-weight-bold.text-caption.elevation-3.my-3.ml-2.rounded-lg(
+          block,
+          @click="scrollToTop()",
+          :to="tab.route",
+          v-for="tab in tabs",
+          :key="tab.route",
+          active-class="primary darken-1"
+        )
           v-icon.grey--text.text--lighten-1.pr-1 {{ tab.icon }}
           | {{ tab.title }}
 </template>

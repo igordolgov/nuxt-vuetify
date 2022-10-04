@@ -1,8 +1,8 @@
-<template lang="pug">
+﻿<template lang="pug">
 //- СТРАНИЦА ТОВАРА
 v-container
   v-row.pb-0.white
-    v-col.pa-0.mr-3.mb-3(cols="12", sm="8")
+    v-col.py-0.py-sm-1.mr-3.mb-3(cols="12", sm="8")
       v-sheet.img-height.pa-0.d-flex.align-center.grey.lighten-3
         v-carousel.pa-0(
           v-model="model",
@@ -21,7 +21,7 @@ v-container
             :aspect-ratio="1",
             height="auto"
           )
-    v-col.font.text-sm-body-2.pt-0(cols="12", sm="3", lg="3")
+    v-col.font.text-sm-body-2.pt-0.pt-sm-4(cols="12", sm="3", lg="3")
       span.secondary--text.text--lighten-4 Артикул:
       | {{ product.category + '-' + product.id }}
       hr.secondary--text.mb-2
@@ -40,7 +40,7 @@ v-container
         {{ product.description }}
 </template>
 
-<script defer>
+<script>
 import products from "@/data/products";
 import categories from "@/data/categories";
 import numberFormat from "@/helpers/numberFormat";
@@ -78,12 +78,16 @@ export default {
 .v-icon__svg {
   fill: lightgrey;
 }
+.v-window__prev,
+.v-window__next {
+  margin-top: 124px;
+}
 .mdi-minus {
   color: #fff !important;
 }
 @media (min-width: 415px) {
   .v-carousel {
-    height: 89vh !important;
+    height: 83vh !important;
   }
 }
 @media (max-width: 414px) {
